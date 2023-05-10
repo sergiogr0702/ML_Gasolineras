@@ -20,10 +20,6 @@ class RandomForestModel(BaseModel):
     trained_model: "RandomForestClassifier | None"
 
     def __init__(self, model: object = None):
-        """
-        Creates an instance of this model.
-        model: Trained RF model. If unspecified, this instance must be trained before it can be used for prediction.
-        """
         self.trained_model = model
 
     def get_model_type(self) -> ModelType:

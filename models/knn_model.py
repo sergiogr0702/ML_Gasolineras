@@ -8,8 +8,6 @@ from defs.exceptions import IllegalOperationError
 K-nearest neighbors model
 """
 
-# If the number of samples passed to _get_trained_model() is higher than this value, only this amount of samples
-# will be used to train NCA.
 MAX_SAMPLES_NCA = 1500
 
 
@@ -18,11 +16,6 @@ class KnnModel(BaseModel):
 	trained_nca: "NeighborhoodComponentsAnalysis | None"
 
 	def __init__(self, saved_data=None):
-		"""
-		Creates an instance of this model.
-		saved_data: Trained model and NCA. If unspecified, this instance must be trained before it can be used
-		for prediction.
-		"""
 		if saved_data is None:
 			self.trained_model = None
 			self.trained_nca = None

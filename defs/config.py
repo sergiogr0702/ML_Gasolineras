@@ -3,9 +3,6 @@ from typing import Dict
 
 
 class ModelType(Enum):
-    """
-	Lists the different types of models that can be used for prediction
-	"""
     SVM = 1
     RANDOM_FOREST = 2
     EXTREME_BOOSTING_TREES = 3
@@ -29,9 +26,6 @@ class ModelType(Enum):
 
     @classmethod
     def _short_names(cls) -> Dict:
-        """
-		Returns a dict that matches each model type with its short name.
-		"""
         return {
             cls.SVM: "SVM",
             cls.RANDOM_FOREST: "RF",
@@ -41,10 +35,6 @@ class ModelType(Enum):
 
 
 class Config:
-    """
-	Class useed to store the config data passed to the program
-	"""
-
     # Path to the input CSV file containing the data
     input_path: str
 

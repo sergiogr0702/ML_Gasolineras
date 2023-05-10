@@ -11,23 +11,13 @@ from defs.constants import Constants as Cst
 
 
 class SplitData:
-    """
-	Class that represents data split in 4 groups: Train X, Train Y, Test X and Test Y
-	"""
-
     x_train: Any
     y_train: Any
     x_test: Any
     y_test: Any
-    # Additional column for clarity when outputting the dataset
-    time_test: Any
 
 
 def create_dataset_for_train(config: Config) -> DataFrame:
-    """
-	Creates a dataset meant to be used for model traning and testing using the given config
-	"""
-
     if os.path.isfile(config.input_path):
         dataset = pd.read_csv(config.input_path)
     else:
@@ -37,11 +27,6 @@ def create_dataset_for_train(config: Config) -> DataFrame:
 
 
 def get_split_data(data: DataFrame, test_percent: float) -> SplitData:
-    """
-	Given a DataFrame, returns a version of it split in test/train and x/y data.
-	test_percent: Percentage of data that should be used for testing. The rest will be used for training.
-	"""
-
     split_data = SplitData()
 
     cols_t = [col for col in data.columns if col.startswith(Cst.PREFIX_COLUMN_PRICE)]

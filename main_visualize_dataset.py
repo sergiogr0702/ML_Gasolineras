@@ -12,6 +12,10 @@ from defs.utils import get_script_name
 
 pd.set_option('display.max_columns', None)
 
+"""
+Script used to visualize certain parameters of the dataset.
+"""
+
 
 def main():
     args = sys.argv

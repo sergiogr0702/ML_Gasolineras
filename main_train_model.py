@@ -68,18 +68,18 @@ def run(config: Config, dataset: DataFrame = None):
 
 def print_help():
     print("Usage: " + get_script_name(
-        sys.argv[0]) + " input_path output_path model group_amount num_groups prediction_type\n"
-                       "input_path: Path to the CSV file containing input data, or to a folder containing all the data files.\n"
-                       "output_path: Folder where the resulting model will be placed\n"
-                       "model: Model to train. Possible values are:\n"
-                       "  " + ModelType.SVM.get_short_name() + ": Support Vector Machine\n"
-                                                               "  " + ModelType.RANDOM_FOREST.get_short_name() + ": Random forest\n"
-                                                                                                                 "  " + ModelType.EXTREME_BOOSTING_TREES.get_short_name() + ": Extreme boosting trees "
-                                                                                                                                                                            "(prediction_type = bool and best only)\n"
-                                                                                                                                                                            "  " + ModelType.KNN.get_short_name() + ": K-Nearest Neighbors\n"
-                                                                                                                                                                                                                    "Flags:\n"
-                                                                                                                                                                                                                    "  -t <percent>: Use <percent>% of the data to test the model. Valid values range from 0 to 100 (both exclusive)."
-                                                                                                                                                                                                                    "If this flag is present, the program will output data regarding the accuracy of the model.")
+        sys.argv[0]) +  " input_path output_path model group_amount num_groups prediction_type\n"
+                        "input_path: Path to the CSV file containing input data, or to a folder containing all the "
+                        "data files.\n"
+                        "output_path: Folder where the resulting model will be placed\n"
+                        "model: Model to train. Possible values are:\n"
+                        "  " + ModelType.SVM.get_short_name() + ": Support Vector Machine\n"
+                        "  " + ModelType.RANDOM_FOREST.get_short_name() + ": Random forest\n"
+                        "  " + ModelType.EXTREME_BOOSTING_TREES.get_short_name() + ": Extreme boosting trees "
+                        "  " + ModelType.KNN.get_short_name() + ": K-Nearest Neighbors\n"
+                        "Flags:\n"
+                        "-t <percent>: Use <percent>% of the data to test the model. Valid values range from 0 to 100 "
+                                                                "(both exclusive).")
 
 
 if __name__ == "__main__":

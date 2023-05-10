@@ -1,8 +1,3 @@
-"""
-File used to store global constants.
-Some of them are based on values from the IOT_pi repo.
-"""
-
 
 class Constants:
 	# Name of the column in the input CSV containing REM

@@ -14,12 +14,6 @@ class ModelFactory:
 		pass
 
 	def get_model(self, model_type: ModelType, trained_model: object = None):
-		"""
-		Returns a new model of the given type.
-		trained_model: If specified, the model object returned will be trained using the specified specific model.
-		The type of this model object must match the expected type (eg. SVM model if model_tpye is ModelType.SVM).
-		"""
-
 		if model_type == ModelType.SVM:
 			return SVMModel(trained_model)
 		elif model_type == ModelType.RANDOM_FOREST:

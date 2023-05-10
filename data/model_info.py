@@ -15,10 +15,6 @@ NAME_MODEL_DATA_FILE = "model_data.txt"
 
 
 class ModelInfo:
-	"""
-	Class used to represent a trained model and some additional information about it
-	"""
-
 	model: object
 	model_type: ModelType
 	scaler: MinMaxScaler
@@ -30,10 +26,6 @@ class ModelInfo:
 
 	@classmethod
 	def load(cls, path_dir: str):
-		"""
-		Creates an instance of this class based on the data contained in the specified folder.
-		The data should be the one created by the save() method.
-		"""
 		# Load dumped model
 		model_file_path = os.path.join(path_dir, NAME_MODEL_FILE)
 		model = pickle.load(open(model_file_path, "rb"))
@@ -51,10 +43,6 @@ class ModelInfo:
 		return cls(model, model_type, scaler)
 
 	def save(self, path_dir: str):
-		"""
-		Saves the model and the additional information to a folder.
-		path_dir: Path to the directory where the data will be saved
-		"""
 		path_file = os.path.join(path_dir, NAME_MODEL_FILE)
 		os.makedirs(path_dir, exist_ok=True)
 		pickle.dump(self.model, open(path_file, 'wb'))

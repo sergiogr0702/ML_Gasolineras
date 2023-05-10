@@ -26,12 +26,6 @@ def main():
 
 
 def run(input_path: str, output_path: str, model_path: str):
-	"""
-	Runs the trained model on the data found at the specified input path.
-	If there's not enough samples in the provided data to run the model (the minimum is num_groups * group_amount),
-	throws NotEnoughDataError.
-	"""
-
 	# Load saved model and its data
 	model_info = ModelInfo.load(model_path)
 	# Load dataset. The attack column is not expected and will be dropped if it exists.
@@ -53,10 +47,6 @@ def run(input_path: str, output_path: str, model_path: str):
 
 
 def get_scaled_dataset(data: DataFrame, scaler: MinMaxScaler):
-	"""
-	Returns a version of the input dataset that only contains the power usage columns, with values scaled to the same
-	range as the one used to train the model.
-	"""
 	cols_t = [col for col in data.columns if col.startswith(Cst.PREFIX_COLUMN_PRICE)]
 	x_data = data[cols_t].values
 	num_cols = x_data.shape[1]
