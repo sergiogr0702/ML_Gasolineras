@@ -28,8 +28,8 @@ class SVMModel(BaseModel):
 
         # Create the parameter grid
         param_grid = {
-            'C': [0.1, 1.0, 10.0],
-            'degree': [2, 3, 4],
+            'C': [0.1, 1.0, 5.0],
+            'degree': [2, 4],
         }
 
         print(f"Searching the best hiperparameters combination in SVM with: {param_grid}\n")

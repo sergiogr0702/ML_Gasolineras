@@ -39,7 +39,7 @@ class ExtremeBoostingTreesModel(BaseModel):
             'booster': ['gbtree'],
             'eta': [0.3, 0.1, 0.01],
             'objective': ['multi:softmax'],
-            'max_depth': [10, 15, 20, 25, 30],
+            'max_depth': [5, 7, 10],
             'num_class': [num_labels]
         }
 

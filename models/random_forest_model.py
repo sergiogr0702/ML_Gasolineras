@@ -30,9 +30,9 @@ class RandomForestModel(BaseModel):
 
     def _train_model(self, x, y):
         param_grid = {
-            'n_estimators': [100, 200, 300],
-            'max_depth': [10, 20, 30, None],
-            'min_samples_split': [2, 5, 10],
+            'n_estimators': [50, 100, 150],
+            'max_depth': [5, 7, 10],
+            'min_samples_split': [2, 5],
             'min_samples_leaf': [1, 2, 4]
         }
 
